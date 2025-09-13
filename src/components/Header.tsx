@@ -114,7 +114,7 @@ const Header = () => {
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <MapPin className="h-4 w-4" />
-                  <span>г. Москва</span>
+                  <span>г. Магнитогорск</span>
                 </div>
               </div>
             </nav>

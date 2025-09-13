@@ -15,6 +15,10 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     section?.scrollIntoView({ behavior: 'smooth' });
@@ -40,7 +44,10 @@ const Header = () => {
       <div className="container-wide">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <button 
+            onClick={scrollToTop}
+            className="flex items-center space-x-3 hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+          >
             <img 
               src="/logo.svg" 
               alt="Logo" 
@@ -49,7 +56,7 @@ const Header = () => {
             <span className="text-2xl font-bold text-foreground">
               ART-HOUSE
             </span>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-8">

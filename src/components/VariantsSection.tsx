@@ -32,7 +32,7 @@ const VariantsSection = () => {
         ],
         price: 'от 800 000 ₽'
       },
-      image: '/Модульный дом круглогодичного проживания.webp',
+      image: '/04.webp',
       color: 'primary'
     },
     {
@@ -51,7 +51,7 @@ const VariantsSection = () => {
         ],
         price: 'от 1 200 000 ₽'
       },
-      image: '/Модульное кафе.webp',
+      image: '/01.webp',
       color: 'accent'
     },
     {
@@ -70,7 +70,7 @@ const VariantsSection = () => {
         ],
         price: 'от 400 000 ₽'
       },
-      image: '/Модульное техпомещение.webp',
+      image: '/02.webp',
       color: 'success'
     },
     {
@@ -89,7 +89,7 @@ const VariantsSection = () => {
         ],
         price: 'от 600 000 ₽'
       },
-      image: '/Модульный магазин.webp',
+      image: '/06.webp',
       color: 'primary'
     },
     {
@@ -108,7 +108,7 @@ const VariantsSection = () => {
         ],
         price: 'от 300 000 ₽'
       },
-      image: '/Модульный гараж.webp',
+      image: '/03.webp',
       color: 'accent'
     },
     {
@@ -127,7 +127,7 @@ const VariantsSection = () => {
         ],
         price: 'от 1 500 000 ₽'
       },
-      image: '/Модульный дом с гаражом.webp',
+      image: '/05.webp',
       color: 'success'
     },
     {
@@ -146,7 +146,7 @@ const VariantsSection = () => {
         ],
         price: 'от 900 000 ₽'
       },
-      image: '/Модульный салон красоты.webp',
+      image: '/08.webp',
       color: 'primary'
     },
     {
@@ -165,7 +165,7 @@ const VariantsSection = () => {
         ],
         price: 'от 350 000 ₽'
       },
-      image: '/Модульный пункт ВБ.webp',
+      image: '/07.webp',
       color: 'accent'
     }
   ];

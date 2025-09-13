@@ -1,132 +1,39 @@
 import React from 'react';
-import { Building2, Phone, Mail, MapPin, Facebook, Instagram, Youtube } from 'lucide-react';
+import { Instagram } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
-  const quickLinks = [
-    { label: 'О компании', href: 'about' },
-    { label: 'Преимущества', href: 'benefits' },
-    { label: 'Варианты', href: 'variants' },
-    { label: 'Технологии', href: 'technology' },
-    { label: 'Контакты', href: 'contact' }
-  ];
-
-  const services = [
-    'Модульные дома',
-    'Коммерческие здания',
-    'Складские помещения',
-    'Технические сооружения',
-    'Индивидуальные проекты'
-  ];
-
-  const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
-    section?.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  // ... existing code ...
 
   return (
     <footer className="bg-foreground text-background">
       <div className="container-wide">
-        {/* Main Footer Content */}
+        {/* Social Media Section */}
         <div className="py-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Company Info */}
-            <div className="lg:col-span-1">
-              <div 
-                className="flex items-center space-x-2 mb-6 cursor-pointer" 
-                onClick={scrollToTop}
-              >
-                <Building2 className="h-8 w-8 text-accent" />
-                <span className="text-2xl font-bold">Арт-House</span>
-              </div>
-              <p className="text-background/80 mb-6 leading-relaxed">
-                Производство быстровозводимых металлокаркасных сооружений. 
-                Качество, надежность и скорость — наши главные принципы.
-              </p>
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-4 w-4 text-accent flex-shrink-0" />
-                  <a 
-                    href="tel:+7XXXXXXXXXX" 
-                    className="text-background/90 hover:text-accent transition-colors"
-                  >
-                    +7 (XXX) XXX-XX-XX
-                  </a>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <Mail className="h-4 w-4 text-accent flex-shrink-0" />
-                  <a 
-                    href="mailto:info@art-house.ru" 
-                    className="text-background/90 hover:text-accent transition-colors"
-                  >
-                    info@art-house.ru
-                  </a>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <MapPin className="h-4 w-4 text-accent flex-shrink-0 mt-0.5" />
-                  <span className="text-background/90">
-                    г. Москва, ул. Строительная, 123
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            {/* Quick Links */}
+          <div className="flex justify-center">
             <div>
-              <h3 className="text-lg font-semibold mb-6">Навигация</h3>
-              <ul className="space-y-3">
-                {quickLinks.map((link, index) => (
-                  <li key={index}>
-                    <button
-                      onClick={() => scrollToSection(link.href)}
-                      className="text-background/80 hover:text-accent transition-colors text-left"
-                    >
-                      {link.label}
-                    </button>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Services */}
-            <div>
-              <h3 className="text-lg font-semibold mb-6">Услуги</h3>
-              <ul className="space-y-3">
-                {services.map((service, index) => (
-                  <li key={index} className="text-background/80">
-                    {service}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* Working Hours & Social */}
-            <div>
-              <h3 className="text-lg font-semibold mb-6">Режим работы</h3>
-              <div className="space-y-3 mb-6">
-                <div className="flex justify-between">
-                  <span className="text-background/80">Пн-Пт:</span>
-                  <span className="text-background">9:00 - 18:00</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-background/80">Сб-Вс:</span>
-                  <span className="text-background">По договоренности</span>
-                </div>
-              </div>
-
-              <h4 className="font-semibold mb-4">Мы в соцсетях</h4>
+              <h4 className="font-semibold mb-4 text-center">Мы в соцсетях</h4>
               <div className="flex space-x-4">
                 <a
                   href="#"
                   className="inline-flex items-center justify-center w-10 h-10 bg-background/10 rounded-lg text-background hover:text-accent hover:bg-accent/10 transition-colors"
-                  aria-label="Facebook"
+                  aria-label="ВКонтакте"
                 >
-                  <Facebook className="h-5 w-5" />
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M15.684 0H8.316C1.592 0 0 1.592 0 8.316v7.368C0 22.408 1.592 24 8.316 24h7.368C22.408 24 24 22.408 24 15.684V8.316C24 1.592 22.408 0 15.684 0zm3.692 17.123h-1.744c-.66 0-.863-.525-2.05-1.714-1.033-1.01-1.49-.815-1.49.302v1.412c0 .302-.157.458-.975.458-2.198 0-4.633-1.332-6.35-3.808-2.578-3.71-4.108-10.669-4.108-11.125 0-.302.157-.458.975-.458h1.744c.817 0 .975.345 1.252 1.107.802 2.2 2.122 4.142 2.674 4.142.21 0 .302-.097.302-.631V9.478c-.073-1.441-.996-1.52-1.441-2.025-.302-.345-.157-.458.157-.733.525-.458 1.107-.733 2.35-.733h1.185c.733 0 .995.156 1.278.733.817.733.733 2.048.733 3.808v3.01c0 .733.337.892.544.892.21 0 .58-.159 1.936-1.515 1.406-1.406 2.409-3.808 2.409-3.808.159-.314.473-.628 1.107-.628h1.744c.867 0 1.052.444.867.733-.302.65-1.489 2.706-3.808 5.78-1.744 2.302-1.744 2.617 0 4.295 1.635 1.588 1.97 2.359 2.025 3.097.159.733-.394 1.107-1.107 1.107z"/>
+                  </svg>
+                </a>
+                <a
+                  href="#"
+                  className="inline-flex items-center justify-center w-10 h-10 bg-background/10 rounded-lg text-background hover:text-accent hover:bg-accent/10 transition-colors"
+                  aria-label="VK Видео"
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M21.5 7.2c-.2-.8-.8-1.4-1.6-1.6C18.7 5.2 12 5.2 12 5.2s-6.7 0-7.9.4c-.8.2-1.4.8-1.6 1.6C2.2 8.4 2.2 12 2.2 12s0 3.6.3 4.8c.2.8.8 1.4 1.6 1.6 1.2.4 7.9.4 7.9.4s6.7 0 7.9-.4c.8-.2 1.4-.8 1.6-1.6.3-1.2.3-4.8.3-4.8s0-3.6-.3-4.8zM10.5 15.5V8.5l5.3 3.5-5.3 3.5z"/>
+                    <circle cx="18.5" cy="5.5" r="2.5" fill="#ff4444"/>
+                    <text x="18.5" y="6.5" textAnchor="middle" fontSize="1.5" fill="white" fontWeight="bold">VK</text>
+                  </svg>
                 </a>
                 <a
                   href="#"
@@ -134,13 +41,6 @@ const Footer = () => {
                   aria-label="Instagram"
                 >
                   <Instagram className="h-5 w-5" />
-                </a>
-                <a
-                  href="#"
-                  className="inline-flex items-center justify-center w-10 h-10 bg-background/10 rounded-lg text-background hover:text-accent hover:bg-accent/10 transition-colors"
-                  aria-label="YouTube"
-                >
-                  <Youtube className="h-5 w-5" />
                 </a>
               </div>
             </div>

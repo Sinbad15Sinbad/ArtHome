@@ -48,29 +48,29 @@ const ContactSection = () => {
     {
       icon: Phone,
       title: 'Телефон',
-      content: '+7 (XXX) XXX-XX-XX',
+      content: '+7 (912) 000-00-00',
       description: 'Звоните с 9:00 до 18:00',
-      action: 'tel:+7XXXXXXXXXX'
+      action: 'tel:+79120000000'
     },
     {
       icon: Mail,
       title: 'Email',
       content: 'info@art-house.ru',
-      description: 'Ответим в течение часа',
+      description: '',
       action: 'mailto:info@art-house.ru'
     },
     {
       icon: MapPin,
       title: 'Офис',
-      content: 'г. Москва, ул. Строительная, 123',
+      content: 'г. Магнитогорск, ул.Магнитная,0',
       description: 'Офис и производство',
       action: null
     },
     {
       icon: Clock,
-      title: 'Режим работы',
+      title: 'Время работы',
       content: 'Пн-Пт: 9:00-18:00',
-      description: 'Сб-Вс: по договоренности',
+      description: 'Сб-Вс: Выходные',
       action: null
     }
   ];
@@ -238,9 +238,11 @@ const ContactSection = () => {
                         ) : (
                           <p className="text-foreground mb-1">{info.content}</p>
                         )}
-                        <p className="text-sm text-muted-foreground">
-                          {info.description}
-                        </p>
+                        {info.description && (
+                          <p className="text-sm text-muted-foreground">
+                            {info.description}
+                          </p>
+                        )}
                       </div>
                     </div>
                   );
@@ -251,7 +253,7 @@ const ContactSection = () => {
             {/* Quick Contact Buttons */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <a
-                href="tel:+7XXXXXXXXXX"
+                href="tel:+79120000000"
                 className="flex items-center justify-center space-x-2 p-4 bg-primary text-primary-foreground rounded-xl font-semibold hover:bg-primary-hover transition-colors shadow-card"
               >
                 <Phone className="h-5 w-5" />
@@ -271,16 +273,18 @@ const ContactSection = () => {
               <h4 className="font-semibold text-foreground mb-4">
                 Наше расположение
               </h4>
-              <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-muted-foreground mx-auto mb-2" />
-                  <p className="text-muted-foreground">
-                    Интерактивная карта
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    г. Москва, ул. Строительная, 123
-                  </p>
-                </div>
+              <div className="aspect-video bg-muted rounded-lg overflow-hidden">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d72662.63819321322!2d58.97784!3d53.41865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x43c13c79b7e45b3d%3A0x83c7b43e6c2b3a4f!2z0JzQsNCz0L3QuNGC0L7Qs9C-0YDRgdC6LCDQp9C10LvRj9Cx0LjQvdGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCDQoNC-0YHRgdC40Y8!5e0!3m2!1sru!2sru!4v1678901234567!5m2!1sru!2sru"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Карта Магнитогорска"
+                >
+                </iframe>
               </div>
             </div>
           </div>

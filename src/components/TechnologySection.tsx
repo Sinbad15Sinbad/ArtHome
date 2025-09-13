@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Layers, 
   Thermometer, 
@@ -7,10 +7,21 @@ import {
   CheckCircle,
   Building,
   Palette,
-  Umbrella
+  Umbrella,
+  Camera
 } from 'lucide-react';
 
 const TechnologySection = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
+  const productionImages = [
+    { src: '/09.webp', alt: 'Производственный процесс 1' },
+    { src: '/010.webp', alt: 'Производственный процесс 2' },
+    { src: '/011.webp', alt: 'Производственный процесс 3' },
+    { src: '/012.webp', alt: 'Производственный процесс 4' },
+    { src: '/013.webp', alt: 'Производственный процесс 5' }
+  ];
+
   const frameworkComponents = [
     {
       title: 'Утепленная половая плита',
@@ -86,6 +97,73 @@ const TechnologySection = () => {
   return (
     <section id="technology" className="section-spacing bg-gradient-steel">
       <div className="container-wide">
+        {/* Production Photo Gallery */}
+        <div className="mb-20">
+          <div className="text-center mb-12">
+            <div className="flex items-center justify-center space-x-3 mb-4">
+              <Camera className="h-8 w-8 text-primary" />
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+                Галерея фотографий с производства
+              </h2>
+            </div>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              Взгляд изнутри на наше современное производство металлокаркасных конструкций
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+            {productionImages.map((image, index) => (
+              <div
+                key={index}
+                className="group relative overflow-hidden rounded-xl shadow-card hover:shadow-lg transition-all duration-300 cursor-pointer"
+                onClick={() => setSelectedImage(image.src)}
+              >
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    onError={(e) => {
+                      console.log(`Failed to load image: ${image.src}`);
+                      e.currentTarget.src = '/placeholder.svg';
+                    }}
+                  />
+                </div>
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <div className="text-white text-center">
+                    <Camera className="h-8 w-8 mx-auto mb-2" />
+                    <p className="text-sm font-medium">Увеличить</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Image Modal */}
+        {selectedImage && (
+          <div 
+            className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+            onClick={() => setSelectedImage(null)}
+          >
+            <div className="relative max-w-4xl max-h-full">
+              <img
+                src={selectedImage}
+                alt="Увеличенное изображение производства"
+                className="max-w-full max-h-full object-contain rounded-lg"
+              />
+              <button
+                onClick={() => setSelectedImage(null)}
+                className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-colors"
+              >
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        )}
+
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">

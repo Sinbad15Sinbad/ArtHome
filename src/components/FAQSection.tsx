@@ -93,12 +93,12 @@ const FAQSection = () => {
                   value={`item-${index}`}
                   className="border border-border/50 rounded-xl bg-gradient-card shadow-card hover:shadow-lg transition-all duration-300"
                 >
-                  <AccordionTrigger className="px-6 py-4 hover:no-underline [&[data-state=open]>div>div]:rotate-45">
-                    <div className="flex items-start space-x-4 text-left">
-                      <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg ${getColorClasses(faq.color)} flex-shrink-0 mt-1`}>
+                  <AccordionTrigger className="px-6 py-4 hover:no-underline">
+                    <div className="flex items-center space-x-4 text-left w-full">
+                      <div className={`inline-flex items-center justify-center w-10 h-10 rounded-lg ${getColorClasses(faq.color)} flex-shrink-0`}>
                         <IconComponent className="h-5 w-5" />
                       </div>
-                      <div>
+                      <div className="flex-1">
                         <h3 className="text-lg font-semibold text-foreground leading-tight">
                           {faq.question}
                         </h3>
@@ -143,7 +143,7 @@ const FAQSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
-                href="tel:+7XXXXXXXXXX" 
+                href="tel:+7 (912) 000-00-00" 
                 className="inline-flex items-center justify-center px-6 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary-hover transition-colors"
               >
                 Позвонить сейчас

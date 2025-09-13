@@ -27,7 +27,45 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 container-wide">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
+          {/* Left side - Image */}
+          <div className="order-2 lg:order-1 flex flex-col justify-center lg:justify-start">
+            <div className="relative max-w-3xl w-full mb-6">
+              <img
+                src="/main_pic.webp"
+                alt="Металлокаркасное строительство - главное изображение"
+                className="w-full h-auto object-cover rounded-2xl shadow-hero"
+                onError={(e) => {
+                  console.log('Failed to load main_pic.webp');
+                  e.currentTarget.src = '/placeholder.svg';
+                }}
+              />
+            </div>
+            
+            {/* CTA Buttons - moved under image */}
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start max-w-2xl">
+              <Button 
+                variant="hero" 
+                size="xl"
+                onClick={scrollToContact}
+                className="w-full sm:w-auto"
+              >
+                Получить расчет
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button 
+                variant="outline" 
+                size="xl"
+                onClick={scrollToBenefits}
+                className="w-full sm:w-auto bg-background/80 backdrop-blur-sm"
+              >
+                Узнать больше
+              </Button>
+            </div>
+          </div>
+          
+          {/* Right side - Content */}
+          <div className="order-1 lg:order-2 text-center lg:text-left">
           {/* Badge */}
           <div className="inline-flex items-center space-x-2 bg-gradient-card backdrop-blur-sm rounded-full px-6 py-3 mb-8 shadow-card">
             <img 
@@ -47,7 +85,7 @@ const HeroSection = () => {
             <br className="hidden sm:block" />
             <span className="text-foregroun">Металлокаркасные</span>{' '}
             <br className="hidden sm:block" />
-            <span className="text-orange-600 uppercase">Сооружения</span>{' '}
+            <span className="text-foregroune">Сооружения</span>{' '}
             <br className="hidden sm:block" />
             <span className="text-orange-600 uppercase">ЗА 7 ДНЕЙ</span>
           </h1>
@@ -57,50 +95,7 @@ const HeroSection = () => {
             Надежные и функциональные здания различного назначения от производителя
           </p>
 
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Button 
-              variant="hero" 
-              size="xl"
-              onClick={scrollToContact}
-              className="w-full sm:w-auto"
-            >
-              Получить расчет
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-            <Button 
-              variant="outline" 
-              size="xl"
-              onClick={scrollToBenefits}
-              className="w-full sm:w-auto bg-background/80 backdrop-blur-sm"
-            >
-              Узнать больше
-            </Button>
-          </div>
 
-          {/* Key Benefits Preview */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
-            <div className="flex items-center justify-center space-x-3 bg-gradient-card backdrop-blur-sm rounded-lg px-6 py-4 shadow-card">
-              <Clock className="h-8 w-8 text-accent flex-shrink-0" />
-              <div className="text-left">
-                <p className="font-semibold text-foreground">7 дней</p>
-                <p className="text-sm text-muted-foreground">Срок возведения</p>
-              </div>
-            </div>
-            <div className="flex items-center justify-center space-x-3 bg-gradient-card backdrop-blur-sm rounded-lg px-6 py-4 shadow-card">
-              <RussianRuble className="h-8 w-8 text-success flex-shrink-0" />
-              <div className="text-left">
-                <p className="font-semibold text-foreground">До 50%</p>
-                <p className="text-sm text-muted-foreground">Экономия средств</p>
-              </div>
-            </div>
-            <div className="flex items-center justify-center space-x-3 bg-gradient-card backdrop-blur-sm rounded-lg px-6 py-4 shadow-card">
-              <Shield className="h-8 w-8 text-primary flex-shrink-0" />
-              <div className="text-left">
-                <p className="font-semibold text-foreground">25+ лет</p>
-                <p className="text-sm text-muted-foreground">Срок службы</p>
-              </div>
-            </div>
           </div>
         </div>
       </div>

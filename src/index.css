@@ -1,0 +1,244 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Арт-House Design System - Industrial & Modern */
+
+@layer base {
+  :root {
+    /* Base Colors */
+    --background: 0 0% 100%;
+    --foreground: 218 54% 20%;
+
+    /* Card Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 218 54% 20%;
+
+    /* Popover Colors */
+    --popover: 0 0% 100%;
+    --popover-foreground: 218 54% 20%;
+
+    /* Primary - Industrial Blue */
+    --primary: 214 78% 47%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 214 78% 42%;
+
+    /* Secondary - Steel Gray */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 218 54% 20%;
+
+    /* Muted Colors */
+    --muted: 220 14% 96%;
+    --muted-foreground: 218 27% 51%;
+
+    /* Accent - Construction Orange */
+    --accent: 21 90% 48%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 21 90% 43%;
+
+    /* Success - Safety Green */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 214 78% 47%;
+
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, #49a768 0%, #235aba 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
+    --gradient-steel: linear-gradient(180deg, hsl(220 14% 96%) 0%, hsl(220 13% 91%) 100%);
+
+    /* Shadows */
+    --shadow-card: 0 4px 6px -1px hsl(220 13% 91% / 0.1), 0 2px 4px -1px hsl(220 13% 91% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 13% 91% / 0.1), 0 4px 6px -2px hsl(220 13% 91% / 0.05);
+    --shadow-hero: 0 25px 50px -12px rgba(73, 167, 104, 0.25);
+
+    /* Borders */
+    --radius: 0.75rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Base Colors */
+    --background: 218 54% 8%;
+    --foreground: 220 14% 96%;
+
+    /* Card Colors */
+    --card: 218 50% 12%;
+    --card-foreground: 220 14% 96%;
+
+    /* Popover Colors */
+    --popover: 218 50% 12%;
+    --popover-foreground: 220 14% 96%;
+
+    /* Primary - Industrial Blue Dark */
+    --primary: 214 78% 52%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 214 78% 47%;
+
+    /* Secondary - Steel Gray Dark */
+    --secondary: 218 50% 16%;
+    --secondary-foreground: 220 14% 96%;
+
+    /* Muted Colors */
+    --muted: 218 50% 16%;
+    --muted-foreground: 218 27% 65%;
+
+    /* Accent - Construction Orange Dark */
+    --accent: 21 90% 52%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 21 90% 47%;
+
+    /* Success - Safety Green Dark */
+    --success: 142 76% 40%;
+    --success-foreground: 0 0% 100%;
+
+    /* Destructive */
+    --destructive: 0 84% 64%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Border & Input */
+    --border: 218 50% 20%;
+    --input: 218 50% 20%;
+    --ring: 214 78% 52%;
+
+    /* Gradients Dark */
+    --gradient-hero: linear-gradient(135deg, #49a768 0%, #235aba 100%);
+    --gradient-card: linear-gradient(145deg, hsl(218 50% 12%) 0%, hsl(218 50% 16%) 100%);
+    --gradient-steel: linear-gradient(180deg, hsl(218 50% 16%) 0%, hsl(218 50% 20%) 100%);
+
+    /* Shadows Dark */
+    --shadow-card: 0 4px 6px -1px hsl(218 54% 4% / 0.3), 0 2px 4px -1px hsl(218 54% 4% / 0.18);
+    --shadow-lg: 0 10px 15px -3px hsl(218 54% 4% / 0.3), 0 4px 6px -2px hsl(218 54% 4% / 0.18);
+    --shadow-hero: 0 25px 50px -12px rgba(73, 167, 104, 0.4);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Hero Section Styles */
+  .hero-gradient {
+    background: var(--gradient-hero);
+  }
+
+  .card-gradient {
+    background: var(--gradient-card);
+  }
+
+  .steel-gradient {
+    background: var(--gradient-steel);
+  }
+
+  /* Animation Classes */
+  .fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .fade-in-left {
+    animation: fadeInLeft 0.6s ease-out forwards;
+  }
+
+  .fade-in-right {
+    animation: fadeInRight 0.6s ease-out forwards;
+  }
+
+  /* Custom Utilities */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .container-wide {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-spacing {
+    @apply py-16 lg:py-24;
+  }
+}
+
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px hsl(var(--foreground) / 0.1);
+  }
+
+  .backdrop-blur-glass {
+    backdrop-filter: blur(8px);
+    background: hsl(var(--background) / 0.8);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

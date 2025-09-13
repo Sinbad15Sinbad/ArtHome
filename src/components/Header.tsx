@@ -96,7 +96,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden absolute top-full left-0 right-0 backdrop-blur-glass border-b border-border">
+          <div className="lg:hidden absolute top-full left-0 right-0 backdrop-blur-glass border-b border-border bg-background/95 z-40">
             <nav className="flex flex-col space-y-4 p-6">
               {navItems.map((item) => (
                 <button
@@ -110,7 +110,7 @@ const Header = () => {
               <div className="pt-4 border-t border-border space-y-2">
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <Phone className="h-4 w-4" />
-                  <span>+7 (XXX) XXX-XX-XX</span>
+                  <span>+7 (912) 000-00-00</span>
                 </div>
                 <div className="flex items-center space-x-2 text-sm text-muted-foreground">
                   <MapPin className="h-4 w-4" />
